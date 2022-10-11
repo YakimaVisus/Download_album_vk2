@@ -13,7 +13,7 @@
 - pip install requests
 
 ## Настройка
-Свой токен от страницы вк в 13 строку  
+Свой токен от страницы вк в 12 строку  
 
 ![Alt-текст](https://github.com/YakimaVisus/Download_album_vk/blob/main/Снимок.PNG "Ворк") 
 
