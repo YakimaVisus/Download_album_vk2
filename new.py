@@ -37,7 +37,7 @@ def main():
     
     r = requests.get('https://api.vk.com/method/photos.get', params={'owner_id':id_user,'access_token':token,'rev':0,'extended':1,'album_id':id_albom,'count':1000,'photo_sizes': True, 'v':5.131 }) #в случае ошибак обновсите 'v'
     data = (r.json())
-    with open('photos.json', 'w+') as file:
+    with open('photos.json', 'w+',encoding="utf-8") as file:
         json.dump(data, file, indent=2, ensure_ascii=False)
         for i in range(len(data["response"]["items"])):
                 photo_url = str(data["response"]["items"][i]["sizes"][4]["url"])
