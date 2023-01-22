@@ -40,7 +40,7 @@ def main():
     with open('photos.json', 'w+',encoding="utf-8") as file:
         json.dump(data, file, indent=2, ensure_ascii=False)
         for i in range(len(data["response"]["items"])):
-                photo_url = str(data["response"]["items"][i]["sizes"][4]["url"])
+                photo_url = str(data["response"]["items"][i]["sizes"][len(data["response"]["items"][i]["sizes"])-1]["url"]) # ну типа макс по качевству фотку ищем да
                 print(Fore.GREEN + f"[{i}] - фотка загружена " + str(data["response"]["items"][i]['id']))
                 urllib.request.urlretrieve(photo_url, newpath + '/' + str(data["response"]["items"][i]['id']) + '.jpg')
     # работаем с каждой полученной фотографией
